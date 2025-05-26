@@ -11,7 +11,6 @@ class SetorSerializer(serializers.ModelSerializer):
         model = Setor
         fields = '__all__'
 
-        
 class FuncionarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Funcionario
@@ -22,12 +21,10 @@ class MedicoSerializer(serializers.ModelSerializer):
         model = Medico
         fields = '__all__'
 
-
 class ChefeSetorSerializer(serializers.ModelSerializer):
     class Meta:
         model = ChefeSetor
         fields = '__all__'
-
 
 class GerenteSerializer(serializers.ModelSerializer):
     class Meta:
@@ -52,4 +49,9 @@ class LeituraSetorSerializer(models.Model):
 class LeituraHospitalSerializer(models.Model):
     class Meta:
         models = LeituraEquipamento
+        fields = '__all__'
+
+class PrevisaoSerializer(models.Model):
+    class Meta:
+        models = Previsao
         fields = '__all__'

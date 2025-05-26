@@ -34,6 +34,7 @@ class Hospital(models.Model):
     endereco = models.CharField(max_length=150)
     telefone = models.CharField(max_length=20)
     email = models.EmailField()
+
 class Setor(models.Model):
     nome = models.CharField(max_length=100)
     hospital = models.ForeignKey(Hospital, on_delete=models.CASCADE)
@@ -63,4 +64,10 @@ class LeituraHospital(models.Model):
     data_leitura = models.DateTimeField()
     consumo_kwh = models.FloatField()
     consumo_co2 = models.FloatField()
+
+class Previsao(models.Model):
+    setor = models.ForeignKey('Setor', on_delete=models.SET_NULL, null=True)
+    data_previsao = models.DateTimeField()
+    consumo_previsto = models.FloatField()
+    co2_previsto = models.FloatField()
     
