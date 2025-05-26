@@ -51,7 +51,6 @@ class LeituraEquipamento(models.Model):
     consumo_kwh = models.FloatField()
     consumo_co2 = models.FloatField()
     
-
 class LeituraSetor(models.Model):
     setor = models.ForeignKey(Setor, on_delete=models.CASCADE)
     data_leitura = models.DateTimeField()
