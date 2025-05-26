@@ -13,4 +13,8 @@ class Funcionario(AbstractUser):
 
     data_cadastro = models.DateTimeField(auto_now_add=True)
 
-    
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
+
+class Medico(models.Model):
+    funcionario = models.OneToField(Funcionario)
