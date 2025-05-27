@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 class Funcionario(AbstractUser):
     email = models.EmailField(unique=True)
     setor = models.ForeignKey('Setor', on_delete=models.SET_NULL, null=True)
-    tipo = models.CharField(max_length=20, choises=[
+    tipo = models.CharField(max_length=20, choices=[
         ('médico','Médico'),
         ('chefe','Chefe de Setor'),
         ('gerente', 'Gerente'),
@@ -17,15 +17,15 @@ class Funcionario(AbstractUser):
     REQUIRED_FIELDS = ['username']
 
 class Medico(models.Model):
-    funcionario = models.OneToField(Funcionario, on_delete=models.CASCADE)
+    funcionario = models.OneToOneField(Funcionario, on_delete=models.CASCADE)
     crm = models.CharField(max_length=20)
 
 class ChefeSetor(models.Model):
-    funcionario = models.OneToField(Funcionario, on_delete=models.CASCADE)
+    funcionario = models.OneToOneField(Funcionario, on_delete=models.CASCADE)
     setor_gerenciado = models.OneToOneField('Setor', on_delete=models.CASCADE)
 
 class Gerente(models.Model):
-    funcionario = models.OneToField(Funcionario, on_delete=models.CASCADE)
+    funcionario = models.OneToOneField(Funcionario, on_delete=models.CASCADE)
     hospital = models.OneToOneField('Hospital', on_delete=models.CASCADE)
 
 class Hospital(models.Model):
