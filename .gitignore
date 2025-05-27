@@ -5,3 +5,5 @@ dac/dac/settings.py
 dac/secretkey.txt
 dac/dac/__pycache__/settings.cpython-39.pyc
 dac/dac/settings.py
+dac/__pycache__
+dac/dac/__pycache__
