@@ -9,7 +9,7 @@ class HospitalViewSet(viewsets.ModelViewSet):
 
 class FuncionarioViewSet(viewsets.ModelViewSet):
     queryset = Funcionario.objects.all()
-    serializer_class = HospitalSerializer
+    serializer_class = FuncionarioSerializer
 
 class MedicoViewSet(viewsets.ModelViewSet):
     queryset = Medico.objects.all()

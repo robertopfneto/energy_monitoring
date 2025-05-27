@@ -15,6 +15,11 @@ class FuncionarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Funcionario
         fields =  '__all__'
+        extra_kwargs = {'password' : {'write_only' : True}}
+
+    def create(self, validated_data):
+        user = Funcionario.objects.create_user(**validated_data)
+        return user
 
 class MedicoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -38,20 +43,20 @@ class EquipamentoSerializer(serializers.ModelSerializer):
 
 class LeituraEquipamentoSerializer(serializers.ModelSerializer):
     class Meta:
-        models = LeituraEquipamento
+        model = LeituraEquipamento
         fields = '__all__'
 
 class LeituraSetorSerializer(serializers.ModelSerializer):
     class Meta:
-        models = LeituraEquipamento
+        model = LeituraSetor
         fields = '__all__'
 
 class LeituraHospitalSerializer(serializers.ModelSerializer):
     class Meta:
-        models = LeituraEquipamento
+        model = LeituraHospital
         fields = '__all__'
 
 class PrevisaoSerializer(serializers.ModelSerializer):
     class Meta:
-        models = Previsao
+        model = Previsao
         fields = '__all__'
