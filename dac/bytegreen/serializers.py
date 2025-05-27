@@ -36,22 +36,22 @@ class EquipamentoSerializer(serializers.ModelSerializer):
         model = Equipamento
         fields = '__all__'
 
-class LeituraEquipamentoSerializer(models.Model):
+class LeituraEquipamentoSerializer(serializers.ModelSerializer):
     class Meta:
         models = LeituraEquipamento
         fields = '__all__'
 
-class LeituraSetorSerializer(models.Model):
+class LeituraSetorSerializer(serializers.ModelSerializer):
     class Meta:
         models = LeituraEquipamento
         fields = '__all__'
 
-class LeituraHospitalSerializer(models.Model):
+class LeituraHospitalSerializer(serializers.ModelSerializer):
     class Meta:
         models = LeituraEquipamento
         fields = '__all__'
 
-class PrevisaoSerializer(models.Model):
+class PrevisaoSerializer(serializers.ModelSerializer):
     class Meta:
         models = Previsao
         fields = '__all__'

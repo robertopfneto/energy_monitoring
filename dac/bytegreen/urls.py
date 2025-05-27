@@ -11,12 +11,10 @@ router.register(r'chefes', ChefeSetorViewSet)
 router.register(r'gerentes', GerenteViewSet)
 router.register(r'setores', SetorViewSet)
 router.register(r'equipamentos', EquipamentoViewSet)
-router.register(r'leituras_equipamento', HospitalViewSet)
-router.register(r'leituras_setor', HospitalViewSet)
-router.register(r'leituras_hospital', HospitalViewSet)
-router.register(r'hospitais', HospitalViewSet)
-
+router.register(r'leituras_equipamento', LeituraEquipamentoViewSet)
+router.register(r'leituras_setor', LeituraSetorViewSet)
+router.register(r'leituras_hospital', LeituraHospitalViewSet)
 
 urlpatterns = [
-    path ('',router.urls)
+    path('', include(router.urls)), 
 ]

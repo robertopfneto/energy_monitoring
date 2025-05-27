@@ -31,14 +31,14 @@ class EquipamentoViewSet(viewsets.ModelViewSet):
     queryset = Equipamento.objects.all()
     serializer_class = EquipamentoSerializer
 
-class LeituraEquipamento(models.Model):
+class LeituraEquipamentoViewSet(viewsets.ModelViewSet):
     queryset = LeituraEquipamento.objects.all()
     serializer_class = LeituraEquipamentoSerializer
 
-class LeituraSetor(models.Model):
+class LeituraSetorViewSet(viewsets.ModelViewSet):
     queryset = LeituraSetor.objects.all()
     serializer_class = LeituraSetorSerializer
 
-class LeituraHospital(models.Model):
+class LeituraHospitalViewSet(viewsets.ModelViewSet):
     queryset = LeituraHospital.objects.all()
     serializer_class = LeituraHospitalSerializer
