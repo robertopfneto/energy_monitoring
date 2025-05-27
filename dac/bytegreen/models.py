@@ -66,8 +66,8 @@ class LeituraHospital(models.Model):
     consumo_co2 = models.FloatField()
 
 class Previsao(models.Model):
-    setor = models.ForeignKey('Setor', on_delete=models.SET_NULL, null=True)
+    setor = models.ForeignKey('Setor', on_delete=models.SET_NULL, null=True, blank=True)
+    hospital = models.ForeignKey('Hospital', on_delete=models.SET_NULL, null=True, blank=True)
     data_previsao = models.DateTimeField()
     consumo_previsto = models.FloatField()
     co2_previsto = models.FloatField()
-    
