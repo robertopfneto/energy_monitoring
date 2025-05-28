@@ -15,7 +15,7 @@ Este sistema é um projeto acadêmico que tem como objetivo monitorar, prever e 
 
 ---
 
-## ⚙️ Configuração do Ambiente
+## ⚙️ Setup
 
 ### 1. Clonar o projeto
 
